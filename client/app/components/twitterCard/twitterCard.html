@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="header">
+    <a href="https://twitter.com/{{vm.userName}}" target="_blank">
+      <img src="{{vm.img}}" alt="" height="48" width="48">
+      <strong class="full-name">{{vm.fullName}}</strong>
+      <span class="user-name">@{{vm.userName}}</span>
+      <small class="time">{{vm.getRelativeTweetTime()}}</small>
+    </a>
+  </div>
+  <div class="content" ng-bind-html="vm.getTweetContent()"/>
+  <div class="footer">
+    <a ng-href="https://twitter.com/{{vm.userName}}/status/{{vm.tweetIdStr}}" target="_blank"><i class="fa fa-reply fa-lg" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-retweet fa-lg" aria-hidden="true">&#09;{{vm.retweetCount}}</i></a>
+    <a href="#"><i class="fa fa-heart fa-lg" aria-hidden="true">&#09;{{vm.favoriteCount}}</i></a>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div ng-repeat="tweet in vm.tweets track by $index">
+  <twitter-card
+    tweet-id-str="tweet.id_str"
+    full-name="tweet.user.name"
+    user-name="tweet.user.screen_name"
+    retweet-count="tweet.retweet_count"
+    favorite-count="tweet.favorite_count"
+    img="tweet.user.profile_image_url"
+    tweet-time="tweet.created_at"
+    content="tweet.text">
+  <twitter-card/>
+</div>

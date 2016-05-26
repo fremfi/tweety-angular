@@ -87,6 +87,13 @@
         ng-click="vm.onSave()">Save Changes
         <i class="material-icons right">send</i>
       </button>
+      <button class="btn waves-effect waves-light btn-reset"
+        ng-class="vm.settings.themeColor"
+        type="submit"
+        name="action"
+        ng-click="vm.onReset()">Reset
+        <i class="material-icons right">settings_backup_restore</i>
+      </button>
     </div>
   </div>
 </div>

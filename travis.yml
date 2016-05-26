@@ -1,6 +1,6 @@
 deploy:
   api_key: 09fa674a-c454-4a13-81e2-74901a1a0b2e
-  app: appdirect-twiiter-challenge
+  app: appdirect-twitter-challenge
   provider: heroku
 install: npm install
 language: node_js

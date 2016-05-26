@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/fjmva/appdirect-challenge.svg?branch=master)](https://travis-ci.org/fjmva/appdirect-challenge)
 # AppDirect Challenge
 
 This project uses a number of open source projects

@@ -26,14 +26,6 @@ describe('TwitterCard', () => {
     });
   });
 
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(TwitterCardTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-    });
-  });
-
   describe('Component', () => {
       // component/directive specs
       let component = TwitterCardComponent;
@@ -46,8 +38,5 @@ describe('TwitterCard', () => {
         expect(component).to.have.property('controllerAs');
       });
 
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(TwitterCardController);
-      });
   });
 });

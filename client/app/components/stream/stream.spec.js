@@ -26,14 +26,6 @@ describe('Stream', () => {
     });
   });
 
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(StreamTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-    });
-  });
-
   describe('Component', () => {
       // component/directive specs
       let component = StreamComponent;
@@ -44,10 +36,6 @@ describe('Stream', () => {
 
       it('uses `controllerAs` syntax', () => {
         expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(StreamController);
       });
   });
 });

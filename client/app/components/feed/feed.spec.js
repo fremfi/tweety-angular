@@ -26,14 +26,6 @@ describe('Feed', () => {
     });
   });
 
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(FeedTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-    });
-  });
-
   describe('Component', () => {
       // component/directive specs
       let component = FeedComponent;

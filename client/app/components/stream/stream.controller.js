@@ -4,6 +4,7 @@ function StreamController($http) {
 
   var vm = this;
   vm.name = 'stream';
+  vm.isLoading = true;
 
   vm.tweets = [];
   var apiUrl = 'https://gm-twitter-proxy.herokuapp.com/1.1/statuses/user_timeline.json?count=' + vm.tweetCount + '&screen_name=' + vm.userName;
@@ -21,6 +22,7 @@ function StreamController($http) {
 
   vm.$onInit = function () {
     fetchTweets($http).then(function (tweets){
+      vm.isLoading = false;
       vm.tweets = tweets;
     });
   }

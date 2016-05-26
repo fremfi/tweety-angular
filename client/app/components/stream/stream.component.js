@@ -1,12 +1,13 @@
 import template from './stream.html';
 import controller from './stream.controller';
-import './stream.styl';
 
 let streamComponent = {
   restrict: 'E',
   bindings: {
     userName: '<',
-    tweetCount: '<'
+    tweetCount: '<',
+    startDate: '<',
+    endDate: '<'
   },
   template,
   controller: ['$http', controller],

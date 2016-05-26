@@ -1,0 +1,83 @@
+<div class="container-settings">
+  <div class="row">
+    <div class="input-field col s12 m4">
+      <select ng-model="vm.settings.numberOfColumns" material-select watch ng-change="vm.onNumColumnChange()">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">One Column</option>
+        <option value="2">Two Columns</option>
+        <option value="3">Three Columns</option>
+      </select>
+      <label>Number Of Columns</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12 m4">
+      <input id="user_name_1" type="text" class="validate" ng-model="vm.settings.columnOneName">
+      <label for="user_name_1" class="active">Column One Username</label>
+    </div>
+    <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 1">
+      <input id="user_name_2" type="text" class="validate" ng-model="vm.settings.columnTwoName">
+      <label for="user_name_2" class="active">Column Two Username</label>
+    </div>
+    <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 2">
+      <input id="user_name_3" type="text" class="validate" ng-model="vm.settings.columnThreeName">
+      <label for="user_name_3" class="active">Column Three Username</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12 m4">
+      <p class="range-field">
+        <label for="tweet_num_col_1">Column One Tweet Count</label>
+        <input type="range" id="tweet_num_col_1" min="0" max="30" value="30" ng-model="vm.settings.columnOneTweetCount"/>
+      </p>
+    </div>
+    <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 1">
+      <p class="range-field">
+        <label for="tweet_num_col_2">Column Two Tweet Count</label>
+        <input type="range" id="tweet_num_col_2" min="0" max="30" ng-model="vm.settings.columnTwoTweetCount"/>
+      </p>
+    </div>
+    <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 2">
+      <p class="range-field">
+        <label for="tweet_num_col_3">Column Three Tweet Count</label>
+        <input type="range" id="tweet_num_col_2" min="0" max="30" value="30" ng-model="vm.settings.columnThreeTweetCount"/>
+      </p>
+    </div>
+  </div>
+
+  <!-- TODO: set to true once api to query for dates is available -->
+  <div class="row" ng-if="false">
+    <div class="col s12 m4">
+      <label for="date_from">From Date</label>
+      <input type="text" id="date_from" class="datepicker" ng-model="vm.settings.startDate" input-date>
+    </div>
+    <div class="col s12 m4">
+      <label for="date_to">To Date</label>
+      <input type="text" id="date_to" class="datepicker" ng-model="vm.settings.endDate" input-date>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12 m4">
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Earth</option>
+        <option value="2">Fire</option>
+        <option value="3">Water</option>
+      </select>
+      <label>Color Palettes</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m4">
+      <button class="btn waves-effect waves-light btn-save light-blue"
+        type="submit"
+        name="action"
+        ng-click="vm.onSave()">Save Changes
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,24 @@
-<navbar/>
-
 <div class="row">
-  <div class="col s12 m4">
-    <stream user-name="'AppDirect'"
-      tweet-count="5"/>
+  <div ng-class="{ 'col s12 m4': vm.settings.numberOfColumns === '3',
+    'col s12 m6': vm.settings.numberOfColumns === '2',
+    'col s12 m6 push-m3': vm.settings.numberOfColumns === '1' }">
+    <stream user-name="vm.settings.columnOneName"
+      tweet-count="vm.settings.columnOneTweetCount"
+      start-date="vm.settings.startDate"
+      end-date="vm.settings.endDate"/>
   </div>
-  <div class="col s12 m4">
-    <stream user-name="'laughingsquid'"
-      tweet-count="5"/>
+  <div ng-class="{ 'col s12 m4': vm.settings.numberOfColumns === '3',
+    'col s12 m6': vm.settings.numberOfColumns === '2' }"
+    ng-if="vm.settings.numberOfColumns === '2' || vm.settings.numberOfColumns === '3'">
+    <stream user-name="vm.settings.columnTwoName"
+      tweet-count="vm.settings.columnTwoTweetCount"
+      start-date="vm.settings.startDate"
+      end-date="vm.settings.endDate"/>
   </div>
-  <div class="col s12 m4">
-    <stream user-name="'techcrunch'"
-      tweet-count="5"/>
+  <div class="col s12 m4" ng-if="vm.settings.numberOfColumns === '3'">
+    <stream user-name="vm.settings.columnThreeName"
+      tweet-count="vm.settings.columnThreeTweetCount"
+      start-date="vm.settings.startDate"
+      end-date="vm.settings.endDate"/>
   </div>
 </div>

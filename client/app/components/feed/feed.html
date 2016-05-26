@@ -1,5 +1,5 @@
 <div class="row">
-  <div ng-class="{ 'col s12 m4': vm.settings.numberOfColumns === '3',
+  <div ng-class="{ 'col m12 l4': vm.settings.numberOfColumns === '3',
     'col s12 m6': vm.settings.numberOfColumns === '2',
     'col s12 m6 push-m3': vm.settings.numberOfColumns === '1' }">
     <stream user-name="vm.settings.columnOneName"
@@ -7,7 +7,7 @@
       start-date="vm.settings.startDate"
       end-date="vm.settings.endDate"/>
   </div>
-  <div ng-class="{ 'col s12 m4': vm.settings.numberOfColumns === '3',
+  <div ng-class="{ 'col m12 l4': vm.settings.numberOfColumns === '3',
     'col s12 m6': vm.settings.numberOfColumns === '2' }"
     ng-if="vm.settings.numberOfColumns === '2' || vm.settings.numberOfColumns === '3'">
     <stream user-name="vm.settings.columnTwoName"
@@ -15,7 +15,7 @@
       start-date="vm.settings.startDate"
       end-date="vm.settings.endDate"/>
   </div>
-  <div class="col s12 m4" ng-if="vm.settings.numberOfColumns === '3'">
+  <div class="col m12 l4" ng-if="vm.settings.numberOfColumns === '3'">
     <stream user-name="vm.settings.columnThreeName"
       tweet-count="vm.settings.columnThreeTweetCount"
       start-date="vm.settings.startDate"

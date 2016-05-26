@@ -1,13 +1,17 @@
 <div class="container-settings">
   <div class="row">
     <div class="input-field col s12 m4">
-      <select ng-model="vm.settings.numberOfColumns" material-select watch ng-change="vm.onNumColumnChange()">
+      <label for="num_of_cols_select">Number Of Columns</label>
+      <select ng-model="vm.settings.numberOfColumns"
+        material-select
+        watch
+        class="browser-default"
+        id="num_of_cols_select">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">One Column</option>
         <option value="2">Two Columns</option>
         <option value="3">Three Columns</option>
       </select>
-      <label>Number Of Columns</label>
     </div>
   </div>
 
@@ -61,18 +65,23 @@
 
   <div class="row">
     <div class="input-field col s12 m4">
-      <select>
+      <select ng-model="vm.settings.themeColor"
+        material-select
+        watch
+        id="color_pal_select"
+        class="browser-default">
         <option value="" disabled selected>Choose your option</option>
-        <option value="1">Earth</option>
-        <option value="2">Fire</option>
-        <option value="3">Water</option>
+        <option value="green">Earth</option>
+        <option value="red">Fire</option>
+        <option value="light-blue">Water</option>
       </select>
-      <label>Color Palettes</label>
+      <label for="color_pal_select">Color Palettes</label>
     </div>
   </div>
   <div class="row">
     <div class="col s12 m4">
-      <button class="btn waves-effect waves-light btn-save light-blue"
+      <button class="btn waves-effect waves-light btn-save"
+        ng-class="vm.settings.themeColor"
         type="submit"
         name="action"
         ng-click="vm.onSave()">Save Changes

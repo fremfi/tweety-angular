@@ -14,7 +14,7 @@ let feedModule = angular.module('feed', [
   $stateProvider
     .state('feed', {
       url: '/',
-      template: '<feed></feed>'
+      template: '<feed settings="root.settings"></feed>'
     });
 })
 

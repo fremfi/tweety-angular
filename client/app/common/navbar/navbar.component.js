@@ -3,7 +3,9 @@ import controller from './navbar.controller';
 
 let navbarComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    settings: '='
+  },
   template,
   controller,
   controllerAs: 'vm'

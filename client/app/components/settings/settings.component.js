@@ -4,9 +4,11 @@ import './settings.styl';
 
 let settingsComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    settings: '='
+  },
   template,
-  controller,
+  controller:['$state', controller],
   controllerAs: 'vm'
 };
 

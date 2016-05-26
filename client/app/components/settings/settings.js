@@ -12,7 +12,7 @@ let settingsModule = angular.module('settings', [
   $stateProvider
     .state('settings', {
       url: '/settings',
-      template: '<settings></settings>'
+      template: '<settings settings="root.settings"></settings>'
     });
 })
 

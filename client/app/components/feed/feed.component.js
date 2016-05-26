@@ -3,7 +3,9 @@ import controller from './feed.controller';
 
 let feedComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    settings: '='
+  },
   template,
   controller,
   controllerAs: 'vm'

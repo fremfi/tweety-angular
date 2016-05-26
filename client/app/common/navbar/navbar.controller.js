@@ -1,7 +1,8 @@
-class NavbarController {
-  constructor() {
-    this.name = 'navbar';
-  }
+function NavbarController() {
+
+  var vm = this;
+  vm.name = 'navbar';
+
 }
 
 export default NavbarController;

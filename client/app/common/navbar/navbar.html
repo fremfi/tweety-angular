@@ -1,14 +1,22 @@
-<nav>
-	<div class="nav-wrapper" ng-class="vm.settings.themeColor">
-  		<a href="#" class="brand-logo"></a>
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  		<ul class="right hide-on-med-and-down">
-    		<li ui-sref-active="active"><a ui-sref="feed">FEED</a></li>
-				<li ui-sref-active="active"><a ui-sref="settings">SETTINGS</a></li>
-  		</ul>
-			<ul class="side-nav" id="nav-mobile">
-				<li ui-sref-active="active"><a ui-sref="feed">FEED</a></li>
-				<li ui-sref-active="active"><a ui-sref="settings">SETTINGS</a></li>
-  		 </ul>
-	</div>
-</nav>
+<div class="navbar-fixed">
+	<nav>
+		<div class="nav-wrapper" ng-class="vm.settings.themeColor">
+	  		<a href="#" class="brand-logo center"><img alt="AppDirect" src="https://i.imgsafe.org/8aa563f4c3.png" width="64" height="64"></a>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	  		<ul class="right hide-on-med-and-down">
+	    		<li ui-sref-active="active"><a ui-sref="feed">FEED</a></li>
+					<li ui-sref-active="active"><a ui-sref="settings">SETTINGS</a></li>
+	  		</ul>
+				<ul class="side-nav" id="nav-mobile">
+					<li ui-sref-active="active"><a ui-sref="feed">FEED</a></li>
+					<li ui-sref-active="active"><a ui-sref="settings">SETTINGS</a></li>
+	  		 </ul>
+		</div>
+	</nav>
+</div>
+<script>
+$(document).ready(function() {
+	$(".button-collapse").sideNav();
+	$('select').material_select();
+});
+</script>

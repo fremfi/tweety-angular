@@ -34,19 +34,19 @@
     <div class="input-field col s12 m4">
       <p class="range-field">
         <label for="tweet_num_col_1">Column One Tweet Count</label>
-        <input type="range" id="tweet_num_col_1" min="0" max="30" value="30" ng-model="vm.settings.columnOneTweetCount"/>
+        <input type="range" id="tweet_num_col_1" min="1" max="30" value="30" ng-model="vm.settings.columnOneTweetCount"/>
       </p>
     </div>
     <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 1">
       <p class="range-field">
         <label for="tweet_num_col_2">Column Two Tweet Count</label>
-        <input type="range" id="tweet_num_col_2" min="0" max="30" ng-model="vm.settings.columnTwoTweetCount"/>
+        <input type="range" id="tweet_num_col_2" min="1" max="30" ng-model="vm.settings.columnTwoTweetCount"/>
       </p>
     </div>
     <div class="input-field col s12 m4" ng-if="vm.settings.numberOfColumns > 2">
       <p class="range-field">
         <label for="tweet_num_col_3">Column Three Tweet Count</label>
-        <input type="range" id="tweet_num_col_2" min="0" max="30" value="30" ng-model="vm.settings.columnThreeTweetCount"/>
+        <input type="range" id="tweet_num_col_2" min="1" max="30" value="30" ng-model="vm.settings.columnThreeTweetCount"/>
       </p>
     </div>
   </div>
@@ -79,7 +79,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col s12 m4">
+    <div class="col s12">
       <button class="btn waves-effect waves-light btn-save"
         ng-class="vm.settings.themeColor"
         type="submit"
@@ -97,3 +97,8 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

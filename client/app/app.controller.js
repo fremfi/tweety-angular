@@ -3,7 +3,6 @@ import defaultSettings from './common/defaultSettings';
 function AppController () {
 
     var root = this;
-    root.colorSettings = 'deep-purple';
 
     root.$onInit = function () {
       var savedSettings = localStorage.getItem('twitter-feed-settings');

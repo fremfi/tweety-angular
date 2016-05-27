@@ -1,5 +1,4 @@
 var express = require('express');
-var spawn = require('child_process').spawn;
 var path = require('path');
 var http = require('http');
 var app = express();
@@ -14,7 +13,6 @@ app.get('/', function (req, res) {
   });
 });
 
-spawn('twitter-proxy');
 var server = http.createServer(app).listen(port, function() {
   console.log('Server running on port ' + port);
 });

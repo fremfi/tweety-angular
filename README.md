@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/fjmva/appdirect-challenge.svg?branch=master)](https://travis-ci.org/fjmva/appdirect-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/fjmva/appdirect-challenge/badge.svg?branch=master)](https://coveralls.io/github/fjmva/appdirect-challenge?branch=master)
 # AppDirect Challenge
 
 This project uses a number of open source projects

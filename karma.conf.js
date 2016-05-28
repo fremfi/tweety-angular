@@ -15,7 +15,9 @@ module.exports = function (config) {
 
     plugins: [
       require("karma-chai"),
-      require("karma-chrome-launcher"),
+      require("karma-phantomjs-launcher"),
+      require("karma-coverage"),
+      require("karma-spec-reporter"),
       require("karma-mocha"),
       require("karma-mocha-reporter"),
       require("karma-sourcemap-loader"),
@@ -34,7 +36,11 @@ module.exports = function (config) {
           { test: /\.html/, loader: 'raw' },
           { test: /\.styl$/, loader: 'style!css!stylus' },
           { test: /\.css$/, loader: 'style!css' }
-        ]
+        ],
+        postLoaders: [{
+          test: /\.(js|jsx)$/, exclude: /(node_modules)/,
+          loader: 'istanbul-instrumenter'
+        }]
       }
     },
 
@@ -43,7 +49,15 @@ module.exports = function (config) {
     },
 
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['spec', 'coverage'],
+    coverageReporter: {
+      dir: 'reports/coverage',
+      reporters: [
+        { type: 'html', subdir: 'report-html' },
+        { type: 'lcov', subdir: 'report-lcov' },
+        { type: 'cobertura', subdir: '.', file: 'cobertura.txt' }
+      ]
+    },
 
     // web server port
     port: 9876,
@@ -60,7 +74,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     // if true, Karma runs tests once and exits
     singleRun: true

@@ -1,6 +1,6 @@
 function StreamController($http, TweetFactory) {
 
-  var vm = this;
+  const vm = this;
   vm.name = 'stream';
   vm.isLoading = true;
 

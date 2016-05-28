@@ -3,7 +3,7 @@ import defaultSettings from '../../common/defaultSettings';
 
 function SettingsController($state) {
 
-  var vm = this;
+  const vm = this;
   vm.name = 'settings';
   vm.onSave = onSave;
   vm.onReset = onReset;
@@ -14,7 +14,7 @@ function SettingsController($state) {
 
   function onSave() {
     localStorage.setItem('twitter-feed-settings', JSON.stringify(vm.settings));
-    Toastr.info('Settings Saved!');
+    Toastr.success('Settings Saved!');
     $state.go('feed');
   };
 

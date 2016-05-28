@@ -1,6 +1,6 @@
 function FeedController () {
 
-    var vm = this;
+    const vm = this;
     vm.name = 'feed';
 
 }

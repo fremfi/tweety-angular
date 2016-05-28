@@ -1,6 +1,6 @@
 function NavbarController() {
 
-  var vm = this;
+  const vm = this;
   vm.name = 'navbar';
 
 }

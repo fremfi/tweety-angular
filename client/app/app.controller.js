@@ -2,7 +2,7 @@ import defaultSettings from './common/defaultSettings';
 
 function AppController () {
 
-    var root = this;
+    const root = this;
 
     root.$onInit = function () {
       var savedSettings = localStorage.getItem('twitter-feed-settings');

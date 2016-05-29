@@ -1,4 +1,4 @@
-function StreamController(TweetFactory) {
+function StreamController(TweetService) {
 
   const vm = this;
   vm.name = 'stream';
@@ -7,7 +7,7 @@ function StreamController(TweetFactory) {
   vm.tweets = [];
 
   vm.$onInit = function () {
-    TweetFactory.getTweets(vm.userName, vm.tweetCount).then(function(tweets) {
+    TweetService.getTweets(vm.userName, vm.tweetCount).then(function(tweets) {
       vm.isLoading = false;
       vm.tweets = tweets;
     })

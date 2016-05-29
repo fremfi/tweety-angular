@@ -22,7 +22,23 @@ describe('TwitterCard', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeTruthy();
+    });
+
+    it('should create hyperlink on urls and usernames', () => {
+      let controller = makeController();
+      controller.content = '@fjmva https://www.fjmva.com';
+      let expectedHyperLinkedContent = '<a href="http://www.twitter.com/@fjmva" target="_blank">@fjmva</a> <a href="https://www.fjmva.com" target="_blank">https://www.fjmva.com</a>';
+      let hyperLinkedContent = controller.getTweetContent();
+      expect(hyperLinkedContent).toEqual(expectedHyperLinkedContent);
+    });
+
+    it('should generate relative tweet time', () => {
+      let controller = makeController();
+      controller.tweetTime = 'Sun Apr 24 01:53:44 +0000 2016';
+      let expectedRelativeTweetTime = 'a month ago';
+      let relativeTweetTime = controller.getRelativeTweetTime();
+      expect(relativeTweetTime).toEqual(expectedRelativeTweetTime);
     });
   });
 
@@ -31,11 +47,11 @@ describe('TwitterCard', () => {
       let component = TwitterCardComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(TwitterCardTemplate);
+        expect(component.template).toEqual(TwitterCardTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
+        expect(component.controllerAs).toBeTruthy();
       });
 
   });

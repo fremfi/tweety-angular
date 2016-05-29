@@ -11,7 +11,7 @@ let streamComponent = {
     endDate: '<'
   },
   template,
-  controller: ['$http', 'TweetFactory', controller],
+  controller: ['TweetFactory', controller],
   controllerAs: 'vm'
 };
 

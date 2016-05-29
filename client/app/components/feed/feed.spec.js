@@ -22,7 +22,7 @@ describe('Feed', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeTruthy();
     });
   });
 
@@ -31,15 +31,15 @@ describe('Feed', () => {
       let component = FeedComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(FeedTemplate);
+        expect(component.template).toEqual(FeedTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
+        expect(component.controllerAs).toBeTruthy();
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(FeedController);
+        expect(component.controller).toEqual(FeedController);
       });
   });
 });

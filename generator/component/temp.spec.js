@@ -22,15 +22,7 @@ describe('<%= upCaseName %>', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
-    });
-  });
-
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(<%= upCaseName %>Template).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(controller.name).toBeTruthy();
     });
   });
 
@@ -39,15 +31,15 @@ describe('<%= upCaseName %>', () => {
       let component = <%= upCaseName %>Component;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(<%= upCaseName %>Template);
+        expect(component.template).toEqual(<%= upCaseName %>Template);
       });
 
       it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
+        expect(component.controllerAs).toBeTruthy();
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(<%= upCaseName %>Controller);
+        expect(component.controller).toEqual(<%= upCaseName %>Controller);
       });
   });
 });

@@ -22,7 +22,7 @@ describe('Stream', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeTruthy();
     });
   });
 
@@ -31,11 +31,12 @@ describe('Stream', () => {
       let component = StreamComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(StreamTemplate);
+        expect(component.template).toEqual(StreamTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
+        expect(component.controllerAs).toBeTruthy();
       });
+
   });
 });

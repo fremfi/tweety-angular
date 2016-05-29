@@ -22,7 +22,7 @@ describe('Settings', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeTruthy();
     });
   });
 
@@ -31,11 +31,11 @@ describe('Settings', () => {
       let component = SettingsComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(SettingsTemplate);
+        expect(component.template).toEqual(SettingsTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
+        expect(component.controllerAs).toBeTruthy();
       });
 
   });

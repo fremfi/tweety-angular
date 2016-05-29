@@ -12,12 +12,12 @@ function TwitterCardController($sce) {
   }
 
   function getTweetContent() {
-    return $sce.trustAsHtml(createHyperLinks(vm.content));
+    return createHyperLinks(vm.content);
   }
 
   function createHyperLinks(content) {
     return hyperLinkUserNames(hyperLinkUrls(content));
-    
+
     function hyperLinkUserNames(content) {
       let userTagPattern = /\@(\w){1,15}/g;
       return content.replace(userTagPattern, '<a href="http://www.twitter.com/$&" target="_blank">$&</a>');

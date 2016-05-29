@@ -1,4 +1,4 @@
-function StreamController($http, TweetFactory) {
+function StreamController(TweetFactory) {
 
   const vm = this;
   vm.name = 'stream';
